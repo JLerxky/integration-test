@@ -1,0 +1,23 @@
+name: Sync Repository Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Mirror Github to Gitee
+        uses: ./.
+        with:
+          src: github/cita-cloud
+          dst: gitee/cita-cloud
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          force_update: true
+          debug: true
