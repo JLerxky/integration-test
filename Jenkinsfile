@@ -20,6 +20,7 @@ pipeline {
       steps {
         container('cli') {
           sh 'test/prepare/startup.sh'
+          echo 'hello'
         }
       }
     }
