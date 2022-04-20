@@ -1,6 +1,7 @@
 pipeline {
   agent {
     kubernetes {
+      cloud 'kubernetes/rivtower-developing-120'
       yamlFile 'k8s/declarativeYamlFile.yml'
     }
   }
