@@ -23,5 +23,6 @@ jobs:
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
           static_list: "integration-test"
+          account_type: org
           debug: true
           force_update: true
